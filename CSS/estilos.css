@@ -1,0 +1,264 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Roboto+Slab:wght@300;500&display=swap');
+
+/* Normalize */
+
+:root {
+    /* Colors */
+    --primary: #0c0636;
+    --secondary: #b61434;
+    --alternative: #1b1a42;
+    --text-color: #474444;
+
+    /* Spacings */
+    --spacing-large: 6rem;
+    --spacing-medium: 2.4rem;
+    --spacing-small: 2rem;
+    --spacing-xsmall: 1rem;
+
+    /* Font-family */
+    --font-principal: 'Barlow', sans-serif;
+    --font-title: 'Roboto Slab', serif;
+
+    /* Font-Sizes */
+    --text-large: 8em;
+    --text-medium: 2.2em;
+    --text-base: 1.6em;
+    --text-small: 1.4em;
+}
+
+
+*::after,
+*::before,
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-principal);
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--font-title);
+    color: var(--primary);
+}
+
+img {
+    width: 100%;
+} 
+/* estilos del header */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: var(--spacing-small) 0;
+    border-bottom: 2px solid var(--primary);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(122,121,141,1) 72%, rgba(247,247,252,1) 86%);
+    background-color: black;
+    background-position: center;
+}
+
+.menu {
+    display: flex;
+    gap: var(--spacing-small);
+}
+
+.menu__item {
+
+    padding: 1.2rem;
+    border: 2px solid #fff;
+    transition: all 1s;
+}
+
+.menu__item:hover {
+    border-color: var(--primary) ;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: var(--spacing-small);
+}
+
+/* Cards */
+
+.cards {
+    display: flex;
+    gap: var(--spacing-xsmall);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xsmall);
+    flex: 1 1 clamp(100px, 30%, 100px);
+}
+
+.box__info {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-medium);
+}
+
+.box__title {
+    font-family: var(--font-title);
+    font-size: var(--text-medium);
+    color: var(--primary);
+}
+
+.box__subtitle {
+    margin-top: 0.6rem;
+    color: var(--secondary);
+    font-size: var(--text-small);
+}
+
+.box__text {
+    margin-top: 1rem;
+    color: var(--text-color);
+    font-size: var(--text-base);
+}
+
+
+
+/* Info */
+
+.info {
+    display: flex;
+    padding: var(--spacing-large);
+    align-items: center;
+}
+
+.info__img {
+    flex: 1 1 50%;
+}
+
+.info__box {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-large);
+}
+
+.info__title {
+    font-size: var(--text-large);
+    font-family: var(--font-title);
+    color: var(--primary);
+}
+
+.info__description {
+    font-size: var(--text-medium);
+    font-weight: 300;
+}
+
+.info__link {
+    display: flex;
+    align-items: center;
+    font-size: var(--text-small);
+    color: var(--primary);
+    gap: var(--spacing-xsmall);
+    margin-top: 2rem;
+}
+
+.info__link path {
+    color: var(--secondary);
+    stroke-width: 5px;
+}
+
+/* ESTILOS SECCION */ 
+
+.grid-container { 
+    display: grid;
+    grid-template-areas: 'myArea myArea myArea';
+    grid-gap: 100px;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .grid-container > div {
+    padding: 0;
+  }
+
+/* --------------FOOTER----------- */
+.footer{
+    padding: 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(122,121,141,1) 72%, rgba(247,247,252,1) 86%);
+    text-align: right;
+}
+.footer__flex{ 
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.footer img{
+    margin-bottom: 15px;
+    width: 60px;
+}
+.footer a{
+    margin-top: 30px;
+}
+@media screen and (max-width: 879px) {
+    .info {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .box__text {
+        font-size: 2em;
+    }
+
+    .box__subtitle {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .info {
+        padding: var(--spacing-xsmall);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 2rem;
+       
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu__link {
+        font-size: var(--text-base);
+        padding: 0.5rem;
+    }
+
+    .cards {
+        padding: 1rem;
+    }
+
+    .grid-container{
+        width: 100%;
+        
+    }
+
+}
